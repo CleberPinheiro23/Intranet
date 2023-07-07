@@ -1,26 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var aniversariantesLista = document.getElementById('aniversariantes-lista');
-  var eventosLista = document.getElementById('eventos-lista');
+  var loginForm = document.getElementById('login-form');
 
-  // Atualizar aniversariantes
-  var aniversariantes = ['João', 'Maria', 'Carlos'];
-  var aniversariantesHTML = '';
+  loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-  for (var i = 0; i < aniversariantes.length; i++) {
-    aniversariantesHTML += '<p>' + aniversariantes[i] + '</p>';
-  }
+    var usernameInput = document.getElementById('username');
+    var passwordInput = document.getElementById('password');
 
-  aniversariantesLista.innerHTML = aniversariantesHTML;
+    var username = usernameInput.value;
+    var password = passwordInput.value;
 
-  // Atualizar eventos
-  var eventos = ['Reunião de equipe', 'Workshop de desenvolvimento', 'Festa de confraternização'];
-  var eventosHTML = '';
+    // Dados dos usuários
+    var usuarios = {
+      usuario1: 'senha1',
+      usuario2: 'senha2',
+      usuario3: 'senha3'
+    };
 
-  for (var j = 0; j < eventos.length; j++) {
-    eventosHTML += '<p>' + eventos[j] + '</p>';
-  }
-
-  eventosLista.innerHTML = eventosHTML;
+    // Verificar as credenciais
+    if (usuarios.hasOwnProperty(username) && usuarios[username] === password) {
+      // Credenciais válidas, redirecionar para a página de formulários
+      window.location.href = 'form.html';
+    } else {
+      // Credenciais inválidas, exibir uma mensagem de erro
+      alert('Credenciais inválidas. Tente novamente.');
+    }
+  });
 });
 
-}

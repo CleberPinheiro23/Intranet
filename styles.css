@@ -1,0 +1,62 @@
+/* Estilos para toda a página */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para o cabeçalho */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Estilos para as seções */
+section {
+  padding: 20px;
+}
+
+section h2 {
+  color: #333;
+  font-size: 24px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+section div {
+  margin-bottom: 20px;
+}
+
+section div h3 {
+  margin-top: 0;
+}
+
+/* Estilos para o rodapé */
+footer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+}

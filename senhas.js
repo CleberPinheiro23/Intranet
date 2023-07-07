@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (loginValido) {
       // Credenciais válidas, redirecionar para a página de formulários
-      window.location.href = 'form.html';
+      window.location.href = 'form.html?username=' + encodeURIComponent(username);
     } else {
       // Credenciais inválidas, exibir uma mensagem de erro
       alert('Credenciais inválidas. Tente novamente.');

@@ -10,15 +10,34 @@ document.addEventListener('DOMContentLoaded', function() {
     var username = usernameInput.value;
     var password = passwordInput.value;
 
-    // Dados dos usuários
-    var usuarios = {
-      usuario1: 'senha1',
-      usuario2: 'senha2',
-      usuario3: 'senha3'
+    // Dados de login e usuário
+    var loginsUsuarios = {
+      login1: {
+        usuario: 'pdoeste.cleber',
+        senha: 'pdoeste123'
+      },
+      login2: {
+        usuario: 'usuario2',
+        senha: 'senha2'
+      },
+      login3: {
+        usuario: 'usuario3',
+        senha: 'senha3'
+      }
     };
 
     // Verificar as credenciais
-    if (usuarios.hasOwnProperty(username) && usuarios[username] === password) {
+    var loginValido = false;
+    for (var login in loginsUsuarios) {
+      if (loginsUsuarios.hasOwnProperty(login)) {
+        if (loginsUsuarios[login].usuario === username && loginsUsuarios[login].senha === password) {
+          loginValido = true;
+          break;
+        }
+      }
+    }
+
+    if (loginValido) {
       // Credenciais válidas, redirecionar para a página de formulários
       window.location.href = 'form.html';
     } else {
@@ -27,4 +46,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-

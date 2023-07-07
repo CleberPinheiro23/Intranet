@@ -1,41 +1,37 @@
-$(document).ready(function() {
-  var form = $('#atualizar-form');
+document.addEventListener('DOMContentLoaded', function() {
+  var loginForm = document.getElementById('login-form');
 
-  form.on('submit', function(event) {
+  loginForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var aniversariantesInput = $('#aniversariantes');
-    var eventosInput = $('#eventos');
+    var usernameInput = document.getElementById('username');
+    var passwordInput = document.getElementById('password');
 
-    var aniversariantes = aniversariantesInput.val();
-    var eventos = eventosInput.val();
+    var username = usernameInput.value;
+    var password = passwordInput.value;
 
-    // Chamar a função do Google Apps Script para atualizar a página inicial
-    atualizarPaginaInicial(aniversariantes, eventos);
+    // Verificar as credenciais
+    var url = 'usuarios.json'; // Arquivo JSON com os usuários e senhas
 
-    // Limpar os campos do formulário
-    aniversariantesInput.val('');
-    eventosInput.val('');
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        var usuarios = data.usuarios;
+
+        var loginValido = usuarios.some(function(usuario) {
+          return usuario.username === username && usuario.password === password;
+        });
+
+        if (loginValido) {
+          // Credenciais válidas, redirecionar para a página de formulários
+          window.location.href = 'form.html';
+        } else {
+          // Credenciais inválidas, exibir uma mensagem de erro
+          alert('Credenciais inválidas. Tente novamente.');
+        }
+      })
+      .catch(error => {
+        console.log('Ocorreu um erro:', error);
+      });
   });
-
-  // Função para chamar a API do Google Apps Script
-  function atualizarPaginaInicial(aniversariantes, eventos) {
-    var url = 'https://script.google.com/macros/s/SCRIPT_ID/exec';
-    var data = {
-      aniversariantes: aniversariantes,
-      eventos: eventos
-    };
-
-    $.ajax({
-      url: url,
-      type: 'GET',
-      data: data,
-      success: function(response) {
-        console.log('Página inicial atualizada com sucesso!');
-      },
-      error: function(error) {
-        console.error('Ocorreu um erro ao atualizar a página inicial:', error);
-      }
-    });
-  }
 });

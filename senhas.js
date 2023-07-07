@@ -10,32 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var username = usernameInput.value;
     var password = passwordInput.value;
 
-    // Dados de login e usuário
-    var loginsUsuarios = {
-      login1: {
-        usuario: 'pdoeste.cleber',
-        senha: 'pdoeste123'
-      },
-      login2: {
-        usuario: 'usuario2',
-        senha: 'senha2'
-      },
-      login3: {
-        usuario: 'usuario3',
-        senha: 'senha3'
-      }
-    };
+    // Array de usuários permitidos
+    var usuarios = [
+      { username: 'usuario1', password: 'senha1' },
+      { username: 'usuario2', password: 'senha2' },
+      { username: 'usuario3', password: 'senha3' }
+    ];
 
     // Verificar as credenciais
-    var loginValido = false;
-    for (var login in loginsUsuarios) {
-      if (loginsUsuarios.hasOwnProperty(login)) {
-        if (loginsUsuarios[login].usuario === username && loginsUsuarios[login].senha === password) {
-          loginValido = true;
-          break;
-        }
-      }
-    }
+    var loginValido = usuarios.some(function(usuario) {
+      return usuario.username === username && usuario.password === password;
+    });
 
     if (loginValido) {
       // Credenciais válidas, redirecionar para a página de formulários

@@ -1,55 +1,37 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var form = document.getElementById('atualizar-form');
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intranet - Atualizar Aniversariantes e Eventos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Atualizar Aniversariantes e Eventos</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Página Inicial</a></li>
+        <li><a href="comunicacao.html">Comunicação</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  <section>
+    <h2>Atualizar Aniversariantes e Eventos</h2>
+    <form id="atualizar-form">
+      <label for="aniversariantes">Aniversariantes (separados por vírgula):</label>
+      <textarea id="aniversariantes" name="aniversariantes" required></textarea><br>
+      <label for="eventos">Eventos (separados por vírgula):</label>
+      <textarea id="eventos" name="eventos" required></textarea><br>
+      <button type="submit">Atualizar</button>
+    </form>
+  </section>
 
-    var aniversariantesInput = document.getElementById('aniversariantes');
-    var eventosInput = document.getElementById('eventos');
+  <footer>
+    <p>© 2023 Empresa. Todos os direitos reservados.</p>
+  </footer>
 
-    var aniversariantes = aniversariantesInput.value;
-    var eventos = eventosInput.value;
-
-    // Construir a URL da página inicial com os parâmetros de query string
-    var url = 'index.html?aniversariantes=' + encodeURIComponent(aniversariantes) + '&eventos=' + encodeURIComponent(eventos);
-
-    // Redirecionar para a página inicial com os parâmetros de query string
-    window.location.href = url;
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  var aniversariantesLista = document.getElementById('aniversariantes-lista');
-  var eventosLista = document.getElementById('eventos-lista');
-
-  // Obter os parâmetros de query string da URL
-  var urlParams = new URLSearchParams(window.location.search);
-  var aniversariantes = urlParams.get('aniversariantes');
-  var eventos = urlParams.get('eventos');
-
-  // Atualizar aniversariantes
-  if (aniversariantes) {
-    var aniversariantesArray = aniversariantes.split(',');
-    var aniversariantesHTML = '';
-    for (var i = 0; i < aniversariantesArray.length; i++) {
-      var aniversariante = aniversariantesArray[i].trim();
-      if (aniversariante !== '') {
-        aniversariantesHTML += '<p>' + aniversariante + '</p>';
-      }
-    }
-    aniversariantesLista.innerHTML = aniversariantesHTML;
-  }
-
-  // Atualizar eventos
-  if (eventos) {
-    var eventosArray = eventos.split(',');
-    var eventosHTML = '';
-    for (var j = 0; j < eventosArray.length; j++) {
-      var evento = eventosArray[j].trim();
-      if (evento !== '') {
-        eventosHTML += '<p>' + evento + '</p>';
-      }
-    }
-    eventosLista.innerHTML = eventosHTML;
-  }
-});
+  <script src="script.js"></script>
+</body>
+</html>

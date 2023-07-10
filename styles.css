@@ -1,62 +1,254 @@
-/* Estilos para toda a página */
+/* Estilos globais */
 body {
   font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
 }
+li{
+  float: left;
+  
+}
 
-/* Estilos para o cabeçalho */
-header {
-  background-color: #000000;
-  color: #fff;
+  
+}
+
+ container {
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 20px;
+}
+
+/* Estilos do cabeçalho */
+header {
+  background-color: #001f3f; /* Cor de fundo do cabeçalho */
+  color: #fff; /* Cor do texto no cabeçalho */
+  padding: 20px; /* Espaçamento interno no cabeçalho */
+  text-align: center; /* Alinhamento do texto no cabeçalho */
+   
 }
 
 header h1 {
-  margin: 0;
+  font-size: 24px; /* Tamanho da fonte do título no cabeçalho */
+  margin: 0; /* Margem do título no cabeçalho */
+}
+
+nav {
+  text-align: center; /* Alinhamento do menu de navegação */
+  margin-top: 20px; /* Espaçamento superior do menu de navegação */
 }
 
 nav ul {
-  list-style-type: none;
-  padding: 0;
+  list-style: none; /* Remover estilos de lista */
+  padding: 0; /* Remover espaçamento interno da lista */
+  margin: 0; /* Remover margem da lista */
+  display: flex; /* Exibir os itens do menu na horizontal */
+  justify-content: center; /* Alinhar os itens do menu no centro */
 }
 
 nav ul li {
-  display: inline;
-  margin-right: 10px;
+  margin-right: 10px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* Remover espaçamento à direita do último item do menu */
 }
 
 nav ul li a {
-  color: #fff;
-  text-decoration: none;
+  color: #fff; /* Cor do texto nos links do menu */
+  text-decoration: none; /* Remover sublinhado nos links do menu */
+  padding: 5px 10px; /* Espaçamento interno dos links do menu */
+  border-radius: 3px; /* Arredondamento dos cantos dos links do menu */
 }
 
-/* Estilos para as seções */
+nav ul li a:hover {
+  background-color: #003d5b; /* Cor de fundo ao passar o mouse sobre os links do menu */
+}
+
+/* Estilos do conteúdo */
 section {
-  padding: 20px;
+  background-color: #fff; /* Cor de fundo das seções de conteúdo */
+  padding: 20px; /* Espaçamento interno das seções de conteúdo */
+  border-radius: 5px; /* Arredondamento dos cantos das seções de conteúdo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra nas seções de conteúdo */
+  margin-bottom: 20px; /* Espaçamento inferior das seções de conteúdo */
 }
 
 section h2 {
-  color: #333;
-  font-size: 24px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  font-size: 24px; /* Tamanho da fonte dos títulos das seções de conteúdo */
+  margin-top: 0; /* Espaçamento superior dos títulos das seções de conteúdo */
 }
 
-section div {
-  margin-bottom: 20px;
+/* Estilos do formulário */
+form {
+  display: flex; /* Exibir o formulário em linha */
+  flex-direction: column; /* Alinhar os elementos do formulário em coluna */
+  align-items: center; /* Centralizar os elementos do formulário */
 }
 
-section div h3 {
-  margin-top: 0;
+label {
+  font-weight: bold; /* Estilo do texto dos rótulos do formulário */
+  margin-bottom: 10px; /* Espaçamento inferior dos rótulos do formulário */
 }
 
-/* Estilos para o rodapé */
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%; /* Largura total dos campos de texto e área de texto */
+  padding: 10px; /* Espaçamento interno dos campos de texto e área de texto */
+  margin-bottom: 20px; /* Espaçamento inferior dos campos de texto e área de texto */
+  border: 1px solid #ccc; /* Estilo da borda dos campos de texto e área de texto */
+  border-radius: 3px; /* Arredondamento dos cantos dos campos de texto e área de texto */
+  font-size: 16px; /* Tamanho da fonte dos campos de texto e área de texto */
+}
+
+button {
+  background-color: #001f3f; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  border: none; /* Remover a borda do botão */
+  border-radius: 3px; /* Arredondamento dos cantos do botão */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse sobre o botão */
+}
+
+button:hover {
+  background-color: #003d5b; /* Cor de fundo ao passar o mouse sobre o botão */
+}
+
+/* Estilos do rodapé */
 footer {
+  background-color: #001f3f; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto no rodapé */
+  padding: 10px; /* Espaçamento interno no rodapé */
+  textAqui está o código CSS com os comentários adicionados:
+
+```css
+/* Estilos globais */
+body {
+  font-family: Arial, sans-serif;
   background-color: #f5f5f5;
-  padding: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+ container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos do cabeçalho */
+header {
+  background-color: #001f3f; /* Cor de fundo do cabeçalho */
+  color: #fff; /* Cor do texto no cabeçalho */
+  padding: 20px; /* Espaçamento interno no cabeçalho */
+  text-align: right; /* Alinhamento do texto no cabeçalho */
+}
+
+header h1 {
+  font-size: 24px; /* Tamanho da fonte do título no cabeçalho */
+  margin: 0; /* Margem do título no cabeçalho */
+}
+
+nav {
+  text-align: center; /* Alinhamento do menu de navegação */
+  margin-top: 20px; /* Espaçamento superior do menu de navegação */
+  float: left;
+}
+
+nav ul {
+  list-style: none; /* Remover estilos de lista */
+  padding: 0; /* Remover espaçamento interno da lista */
+  margin: 0; /* Remover margem da lista */
+  display: flex; /* Exibir os itens do menu na horizontal */
+  justify-content: center; /* Alinhar os itens do menu no centro */
+}
+
+nav ul li {
+  margin-right: 10px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* Remover espaçamento à direita do último item do menu */
+}
+
+nav ul li a {
+  color: #fff; /* Cor do texto nos links do menu */
+  text-decoration: none; /* Remover sublinhado nos links do menu */
+  padding: 5px 10px; /* Espaçamento interno dos links do menu */
+  border-radius: 3px; /* Arredondamento dos cantos dos links do menu */
+}
+
+nav ul li a:hover {
+  background-color: #003d5b; /* Cor de fundo ao passar o mouse sobre os links do menu */
+}
+
+/* Estilos do conteúdo */
+section {
+  background-color: #fff; /* Cor de fundo das seções de conteúdo */
+  padding: 20px; /* Espaçamento interno das seções de conteúdo */
+  border-radius: 5px; /* Arredondamento dos cantos das seções de conteúdo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra nas seções de conteúdo */
+  margin-bottom: 20px; /* Espaçamento inferior das seções de conteúdo */
+}
+
+section h2 {
+  font-size: 24px; /* Tamanho da fonte dos títulos das seções de conteúdo */
+  margin-top: 0; /* Espaçamento superior dos títulos das seções de conteúdo */
+}
+
+/* Estilos do formulário */
+form {
+  display: flex; /* Exibir o formulário em linha */
+  flex-direction: column; /* Alinhar os elementos do formulário em coluna */
+  align-items: center; /* Centralizar os elementos do formulário */
+}
+
+label {
+  font-weight: bold; /* Estilo do texto dos rótulos do formulário */
+  margin-bottom: 10px; /* Espaçamento inferior dos rótulos do formulário */
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%; /* Largura total dos campos de texto e área de texto */
+  padding: 10px; /* Espaçamento interno dos campos de texto e área de texto */
+  margin-bottom: 20px; /* Espaçamento inferior dos campos de texto e área de texto */
+  border: 1px solid #ccc; /* Estilo da borda dos campos de texto e área de texto */
+  border-radius: 3px; /* Arredondamento dos cantos dos campos de texto e área de texto */
+  font-size: 16px; /* Tamanho da fonte dos campos de texto e área de texto */
+}
+
+button {
+  background-color: #001f3f; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  border: none; /* Remover a borda do botão */
+  border-radius: 3px; /* Arredondamento dos cantos do botão */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse sobre o botão */
+}
+
+button:hover {
+  background-color: #003d5b; /* Cor de fundo ao passar o mouse sobre o botão */
+}
+
+/* Estilos do rodapé */
+footer {
+  background-color: #001f3f; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto no rodapé */
+  padding: 10px; /* Espaçamento interno no rodapé */
   text-align: center;
-  font-size: 12px;
-  color: #777;
+}
+
+/* Estilos do logo */
+logo {
+  margin: 0 auto;
+  background-image: url("LogoPrincesaDoeste389.png");C:\Users\Cleber Pinheiro\OneDrive - Orus Online LTDA\Área de Trabalho\Intranet\
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
 }

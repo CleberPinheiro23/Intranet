@@ -1,37 +1,55 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var loginForm = document.getElementById('login-form');
+  var form = document.getElementById('atualizar-form');
 
-  loginForm.addEventListener('submit', function(event) {
+  form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var usernameInput = document.getElementById('username');
-    var passwordInput = document.getElementById('password');
+    var aniversariantesInput = document.getElementById('aniversariantes');
+    var eventosInput = document.getElementById('eventos');
 
-    var username = usernameInput.value;
-    var password = passwordInput.value;
+    var aniversariantes = aniversariantesInput.value;
+    var eventos = eventosInput.value;
 
-    // Verificar as credenciais
-    var url = 'usuarios.json'; // Arquivo JSON com os usuários e senhas
+    // Construir a URL da página inicial com os parâmetros de query string
+    var url = 'index.html?aniversariantes=' + encodeURIComponent(aniversariantes) + '&eventos=' + encodeURIComponent(eventos);
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        var usuarios = data.usuarios;
-
-        var loginValido = usuarios.some(function(usuario) {
-          return usuario.username === username && usuario.password === password;
-        });
-
-        if (loginValido) {
-          // Credenciais válidas, redirecionar para a página de formulários
-          window.location.href = 'form.html';
-        } else {
-          // Credenciais inválidas, exibir uma mensagem de erro
-          alert('Credenciais inválidas. Tente novamente.');
-        }
-      })
-      .catch(error => {
-        console.log('Ocorreu um erro:', error);
-      });
+    // Redirecionar para a página inicial com os parâmetros de query string
+    window.location.href = url;
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var aniversariantesLista = document.getElementById('aniversariantes-lista');
+  var eventosLista = document.getElementById('eventos-lista');
+
+  // Obter os parâmetros de query string da URL
+  var urlParams = new URLSearchParams(window.location.search);
+  var aniversariantes = urlParams.get('aniversariantes');
+  var eventos = urlParams.get('eventos');
+
+  // Atualizar aniversariantes
+  if (aniversariantes) {
+    var aniversariantesArray = aniversariantes.split(',');
+    var aniversariantesHTML = '';
+    for (var i = 0; i < aniversariantesArray.length; i++) {
+      var aniversariante = aniversariantesArray[i].trim();
+      if (aniversariante !== '') {
+        aniversariantesHTML += '<p>' + aniversariante + '</p>';
+      }
+    }
+    aniversariantesLista.innerHTML = aniversariantesHTML;
+  }
+
+  // Atualizar eventos
+  if (eventos) {
+    var eventosArray = eventos.split(',');
+    var eventosHTML = '';
+    for (var j = 0; j < eventosArray.length; j++) {
+      var evento = eventosArray[j].trim();
+      if (evento !== '') {
+        eventosHTML += '<p>' + evento + '</p>';
+      }
+    }
+    eventosLista.innerHTML = eventosHTML;
+  }
 });
